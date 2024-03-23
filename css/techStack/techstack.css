@@ -1,0 +1,226 @@
+/* Reset default styles */
+#skills-body *,
+#skills-body *::before,
+#skills-body *::after {
+	font-family: 'Roboto', sans-serif;
+	color: white;
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+	background-color: #222831;
+}
+
+/* Header */
+#skills-body h1 {
+	font-size: 2em;
+	margin: 0 0 3rem;
+	padding-top: 1.5rem;
+	text-align: center;
+}
+
+/* Root variables */
+#skills-body {
+    margin: 200px 0px;
+	position: relative;
+    --hue: 223;
+    --bg: #222831;
+    --fg: #222831;
+    --primary: #222831;
+    --trans-dur: 0.3s;
+    --trans-timing: cubic-bezier(0.65, 0, 0.35, 1);
+    font-size: calc(16px + (24 - 16) * (100vw - 320px) / (2560 - 320));
+}
+
+/* Anchor links */
+#skills-body a {
+    color: var(--primary);
+    transition: color var(--trans-dur);
+}
+
+/* Buttons */
+#skills-body .btn {
+	margin-bottom: 20px;
+	height: 30px; /* Adjust the height as needed */
+	width: 120px; /* Adjust the width as needed */
+    background-color: var(--fg);
+    border-radius: 0.3em;
+    color: var(--bg);
+    cursor: pointer;
+    padding: 0.375em 0.75em;
+    transition: background-color calc(var(--trans-dur) / 2) linear, color var(--trans-dur);
+    -webkit-tap-highlight-color: transparent;
+    box-shadow: none; /* Remove any shadow effect */
+}
+.btn-group {
+	display: flex;
+	gap: 0.375em;
+	margin-bottom: 1.5em;
+}
+#skills-body .btn:hover {
+    background-color: #393E46;
+}
+
+/* Timeline */
+#skills-body .timeline {
+    margin: auto;
+    padding: 0 1.5em;
+    width: 100%;
+    max-width: 36em;
+	background-color: #222831;
+}
+
+#skills-body .timeline__arrow {
+	margin-top: -9px;
+	background-color: transparent;
+	border-radius: 0.25em;
+	cursor: pointer;
+	flex-shrink: 0;
+	margin-inline-end: 0.25em;
+	outline: transparent;
+	width: 2em;
+	height: 2em;
+	transition:
+		background-color calc(var(--trans-dur) / 2) linear,
+		color var(--trans-dur);
+	-webkit-appearance: none;
+	appearance: none;
+	-webkit-tap-highlight-color: transparent;
+    position: absolute;
+	left: 2%; /*arrow position*/
+    top: 0.5em; /* Position relative to the top of the timeline item */
+}
+
+#skills-body .timeline__arrow:focus-visible,
+#skills-body .timeline__arrow:hover {
+    background-color: #222831; /* arrow background color*/
+}
+
+#skills-body .timeline__arrow-icon {
+    display: block;
+    pointer-events: none;
+    transform: rotate(-90deg);
+    transition: transform var(--trans-dur) var(--trans-timing);
+    width: 100%;
+    height: auto;
+}
+
+#skills-body .timeline__date {
+    font-size: 0.833em;
+    line-height: 2.4;
+	margin-left: 7%; /*date position but bot included in our code*/
+}
+
+#skills-body .timeline__dot {
+	background-color: currentColor;
+	border-radius: 50%;
+	display: inline-block;
+	flex-shrink: 0;
+	margin: 0.625em 0;
+	margin-inline-end: 1em;
+	position: relative;
+	width: 0.75em;
+	height: 0.75em;
+	left: 8%; /* Dot position*/
+}
+
+#skills-body .timeline__item {
+	position: relative;
+	padding-bottom: 2.25em;
+	overflow: hidden; /* Added overflow to contain absolutely positioned elements */
+}
+
+#skills-body .timeline__item:not(:last-child):before {
+	background-color: currentColor;
+	content: "";
+	display: block;
+	position: absolute;
+	top: 2.0em; /* Position relative to the top of the timeline item */
+	left: 9.09%;  /* *Line* Position in the middle horizontally */
+	transform: translateX(-50%);
+	width: 0.125em;
+	height: 100%; /* Height adjusted to reach the bottom of the timeline item */
+}
+
+[dir="rtl"] #skills-body .timeline__arrow-icon {
+    transform: rotate(90deg);
+}
+
+[dir="rtl"] #skills-body .timeline__item:not(:last-child):before {
+    right: 2.625em;
+    left: auto;
+    transform: translateX(50%);
+}
+
+#skills-body .timeline__item-p,#skills-body .timeline__item-p , #skills-body .timeline__item-p time{
+    background-color: #393E46; /* Or transparent */
+    padding: 0.5em 0.75em;
+    transition: background-color var(--trans-dur) var(--trans-timing);
+}
+
+#skills-body .timeline__item-p,#skills-body ul, #skills-body .timeline__item-p,#skills-body li{
+    background-color: #393E46;
+	padding-left: 10px; /* Or transparent */
+	padding-bottom: 5px;
+    transition: background-color var(--trans-dur) var(--trans-timing);
+}
+
+#skills-body .timeline__item-p a{
+	color: rgb(255, 255, 255);
+}
+
+
+#skills-body .timeline__item-header {
+    display: flex;
+}
+
+#skills-body .timeline__item-body {
+    border-radius: 0.375em;
+    overflow: hidden;
+    margin-top: 0.5em;
+    margin-inline-start: 4em;
+    height: 0;
+	background-color: #393E46;
+}
+
+#skills-body .timeline__item-body-content {
+    background-color: #393E46;
+    opacity: 0;
+    padding: 0.5em 0.75em;
+    visibility: hidden;
+    transition: opacity var(--trans-dur) var(--trans-timing), visibility var(--trans-dur) steps(1,end);
+}
+
+#skills-body .timeline__meta {
+    width: 100%;
+}
+
+#skills-body .timeline__title {
+    font-size: 1.5em;
+    line-height: 1.333;
+	margin-left: 7%;  /*titles in the timeline section (data sceince, data analytics etc..,)*/
+}
+
+/* Expanded state */
+#skills-body .timeline__item-body--expanded {
+    height: auto;
+}
+
+#skills-body .timeline__item-body--expanded .timeline__item-body-content {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: var(--trans-dur), 0s;
+}
+
+#skills-body .timeline__arrow[aria-expanded="true"] .timeline__arrow-icon {
+    transform: rotate(0);
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    #skills-body {
+        --bg: #222831;
+        --fg: #f2f2f2;
+        --primary: #222831;
+    }
+}

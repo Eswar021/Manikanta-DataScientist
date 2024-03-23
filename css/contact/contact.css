@@ -1,0 +1,149 @@
+#contact-id {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  margin-top: 2rem;
+  background: #222831;
+}
+
+.social-menu {
+  display: flex;
+  justify-content: center;
+}
+.social-btn {
+  list-style: none;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  margin: 15px;
+  border-radius: 30%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 0 10px 10px -5px rgb(255,255,255,0.1); */
+  transition: all 0.3s;
+  z-index: 10;
+}
+.social-btn a {
+  text-decoration: none;
+  color: #fff;
+}
+.social-btn:hover a {
+  color: #fff;
+}
+.social-menu .social-btn::before {
+  border-radius: 10%;
+  content: attr(tooltip);
+  position: absolute;
+  top: 0;
+  font-size: 0.9em;
+  font-weight: bold;
+  z-index: -1;
+  opacity: 0;
+  pointer-events: auto;
+  background: #fff;
+  padding: 10px;
+  color: #000;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+}
+.social-menu .social-btn::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 0;
+  opacity: 0;
+  background: #fff;
+  transform: rotate(45deg);
+  left: 20%;
+  z-index: -2;
+  transition: 
+    all 0.3s ease-out;
+}
+.social-menu .social-btn:hover::before {
+  top: -45px;
+  opacity: 1;
+}
+.social-btn:hover::after {
+  top: -12px;
+  opacity: 1;
+}
+
+
+
+/* buttons */
+
+/* linkedin */
+.linkedin a {
+  color: #0072b1;
+}
+.linkedin:hover,
+.linkedin:hover .social-btn:before,
+.linkedin:hover .social-btn:after {
+  background: #222831;
+}
+
+/* github */
+.github:hover,
+.github:hover .social-btn:before,
+.github:hover .social-btn:after {
+  background: #222831;
+}
+
+/* Adjust width and height of the Facebook SVG */
+.github svg {
+  width: 40px; /* Adjust as needed */
+  height: 40px; /* Adjust as needed */
+}
+
+/* tableau */
+.tableau:hover,
+.tableau:hover .social-btn:before,
+.tableau:hover .social-btn:after {
+  background: #222831;
+}
+/* Adjust width and height of the Facebook SVG */
+.tableau svg {
+  width: 40px; /* Adjust as needed */
+  height: 40px; /* Adjust as needed */
+}
+
+/* leetcode */
+.leetcode:hover,
+.leetcode:hover .social-btn:before,
+.leetcode:hover .social-btn:after {
+  background: #222831;
+}
+.leetcode svg {
+  width: 40px; /* Adjust as needed */
+  height: 40px; /* Adjust as needed */
+}
+
+/* hackerrank */
+.hackerrank:hover,
+.hackerrank:hover .social-btn:before,
+.hackerrank:hover .social-btn:after {
+  background: #222831;
+}
+.hackerrank svg {
+  width: 40px; /* Adjust as needed */
+  height: 40px; /* Adjust as needed */
+}
+
+/* kaggle */
+.kaggle:hover,
+.kaggle:hover .social-btn:before,
+.kaggle:hover .social-btn:after {
+  background: #222831;
+}
+.kaggle svg {
+  width: 40px; /* Adjust as needed */
+  height: 40px; /* Adjust as needed */
+}
+
+.social-menu .social-btn::before,
+.social-menu .social-btn::after {
+  z-index: 100; /* Increase z-index value */
+}
